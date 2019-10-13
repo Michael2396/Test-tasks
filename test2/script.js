@@ -20,7 +20,7 @@ function display1(msg) {
     var clientLastName;
     var clientJob;
     var clientAdress;
-    for (var i = 0; i < res.length; i++) {
+    for (let i = 0; i < res.length; i++) {
         clientAvatar = res[i].general.avatar;
         clientFirstName = res[i].general.firstName;
         clientLastName = res[i].general.lastName;
@@ -29,8 +29,7 @@ function display1(msg) {
         listClients.innerHTML += '<div class="client" data-clientFirstName="' + clientFirstName + '"' +
             ' data-clientLastName="' + clientLastName + '" data-clientJob="' + clientJob + '"' +
             ' data-clientAddress="' + clientAdress + '" + data-clientAvatar="' + clientAvatar + '"><div class="client-avatar"><img src=' + clientAvatar + ' alt=""></div>' +
-            '<div class="client-info">' +
-            '<p>' + clientFirstName + '<br>' + clientLastName + '</p></div></div>';
+            '<div class="client-info">' + '<p>' + clientFirstName + '<br>' + clientLastName + '</p></div></div>';
     }
     var client = document.getElementsByClassName("client");
     var listClientInfo = document.getElementsByClassName('list-client-info');
@@ -47,9 +46,9 @@ function display1(msg) {
     var inputSearch = document.getElementById('input-search');
     $(button).click(function () {
         var inputValue = inputSearch.value;
-        for (var j = 0; j < client.length; j++) {
-            if (inputValue !== client[j].dataset.clientfirstname) {
-                client[j].style.visibility = 'hidden';
+        for (let i = 0; i < client.length; i++) {
+            if (inputValue !== client[i].dataset.clientfirstname) {
+                client[i].style.visibility = 'hidden';
             }
         }
     })
