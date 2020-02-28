@@ -33,12 +33,9 @@
             if ((!end) && (start > 0) && (replace > 0)) {
                 if (i <= start) {
                     newArr[i] = arr[i];
-                    // arr2.push(arr[i]);
-                    // // console.log(arr2);
                 }
                 if (i === start + 1) {
                     newArr[i] = replace;
-                    // console.log(arr2);
                 }
                 if (i > start) {
                     newArr.push(arr[i])
@@ -60,7 +57,7 @@
             }
 
         }
-        
+
         arr = newArr;
     }
 
