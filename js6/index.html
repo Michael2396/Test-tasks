@@ -6,15 +6,17 @@
 </head>
 <body>
 <script>
+    var arr = [1, 2, 3, 7, 1, 9, 4, 10, 15, 16, 25, 2];
+
     function getValue() {
-        var value = prompt('ENTER VALUE');
+        var value = prompt('ENTER VALUE "1"-DELETED,"2"-VIEW-ARRAY,"3"-Finish,"4"-ADD-ARRAY');
         value = parseInt(value);
         switch (value) {
             case 1:
                 //ADD FUNCTION DELETED
                 break;
             case 2:
-                //ADD FUNCTION VIEW ARRAY
+                showArray(arr);
                 break;
             case 3:
                 alert('Bye');
@@ -26,6 +28,10 @@
                 alert('error');
                 break;
         }
+    }
+
+    function showArray(arr) {
+       console.log(arr);
     }
 
     getValue()
