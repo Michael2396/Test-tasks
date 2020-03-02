@@ -6,20 +6,21 @@
 </head>
 <body>
 <script>
-    var arr = [1, 2, 3, 7, 1, 9, 4, 10, 15, 16, 25, 2];
+    var array = [1, 2, 3, 7, 1, 9, 4, 10, 15, 16, 25, 2];
+    console.log(array);
 
     function getValue() {
         var value = prompt('ENTER VALUE "1"-DELETED,"2"-VIEW-ARRAY,"3"-Finish,"4"-ADD-ARRAY');
         value = parseInt(value);
         switch (value) {
             case 1:
-                //ADD FUNCTION DELETED
+                deleteValueArray(array);
                 break;
             case 2:
-                showArray(arr);
+                showArray(array);
                 break;
             case 3:
-                alert('Bye');
+                end();
                 break;
             case 4:
                 //ADD FUNCTION(add value in array)
@@ -30,10 +31,45 @@
         }
     }
 
-    function showArray(arr) {
-       console.log(arr);
+    function deleteValueArray(arr) {
+        var value = prompt('value');
+        value = parseInt(value);
+        if (arr.indexOf(value) !== -1) {
+            arr.splice(arr.indexOf(value), 1);
+            console.log(arr)
+        }
+        var result = confirm('Еще кого-то?');
+        if (result) {
+            deleteValueArray(arr);
+            console.log(arr)
+        } else {
+            var confirmEnd = confirm('Точно?');
+            if (confirmEnd) {
+                getValue()
+            } else {
+                deleteValueArray(arr)
+            }
+        }
     }
 
+    function end() {
+        alert('end')
+    }
+
+    function showArray(arr) {
+        var value = confirm(arr);
+        value ? getValue() : end();
+    }
+
+    function addArray(arr) {
+        var value = prompt('enter значение');
+        value = parseInt(value);
+        var getConfirm = confirm('Добавить: ' + (value));
+
+
+    }
+
+    // addArray(array);
     getValue()
 </script>
 </body>
