@@ -23,7 +23,7 @@
                 end();
                 break;
             case 4:
-                //ADD FUNCTION(add value in array)
+                addArray(array);
                 break;
             default:
                 alert('error');
@@ -65,12 +65,19 @@
         var value = prompt('enter значение');
         value = parseInt(value);
         var getConfirm = confirm('Добавить: ' + (value));
-
+        if (arr.indexOf(value) !== -1) {
+            alert('есть такой');
+            addArray(arr);
+        } else {
+            arr.push(value);
+            alert('Успешно');
+            showArray(arr);
+        }
 
     }
 
-    // addArray(array);
-    getValue()
+    getValue();
+    console.log(array);
 </script>
 </body>
 </html>
