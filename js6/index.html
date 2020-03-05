@@ -100,13 +100,13 @@
         });
         if (newArr.length === 0) {
             alert('no string in array');
+        } else {
+            // console.log(newArr);
+            return newArr; //TODO add ternary expression
         }
-            // else if (confirm(newArr)) {
-            //     return newArr;
+        // else if (confirm(newArr)) {
+        //     return newArr;
         // }
-        else {
-            return newArr;
-        }
     }
 
     function searchStringByValue(arr) {
@@ -133,7 +133,10 @@
             getValue();
         }
     }
+
     function filterItemsInArray(arr) {
+        // V-1
+
         var valueUser = prompt('enter value');
         arr = searchAllStringInArray(arr);
         var result = arr.filter(el => el.indexOf(valueUser) !== -1);
@@ -141,9 +144,30 @@
             getValue(arr);
         }else{
             alert('end')
+            //TODO add ternary expression
         }
+        // V-2
+
+        // var valueUser = prompt('enter value');
+        // valueUser = valueUser.split('');
+        // // console.log(valueUser);
+        // arr = searchAllStringInArray(arr);
+        // // console.log(arr);
+        // var count = [];
+        // var str;
+        // for (var i = 0; i < arr.length; i++) {
+        //     for (var j = 0; j < arr.length; j++) {
+        //         // console.log( valueUser[0], valueUser[1])
+        //         if (arr[i][j] === valueUser[0] && valueUser[0]) {
+        //            count.push(arr[i])
+        //         }
+        //     }
+        // }
+        // console.log(count)
     }
-    getValue(arr3);
+
+    console.log(arr3)
+   getValue(arr3)
 </script>
 </body>
 </html>
